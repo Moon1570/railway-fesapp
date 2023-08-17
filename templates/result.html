@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+<h1>Name : {{name}}</h1>
+<p>BSA : {{BSA}}</p>
+<p>Number of cells in 84th day: {{cell84}}</p>
+<button class="btn btn-primary">Download CSV Data</button>
+<a class="btn" href="javascript:window.print()">Click to Print</a>
+<br>
+<hr>
+
+<table class="table table-striped">
+    <caption>{{message}}</caption>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Number of dose</th>
+            <th scope="col">Dose</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for dose in doses %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{dose}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+
+
+</table>
+
+<br>
+<hr>
+<h2>Figures</h2>
+<br>
+
+    {% if toxPlot %}
+        <img src="data:image/png;base64, {{toxPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if noCellPlot %}
+        <img src="data:image/png;base64, {{noCellPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if dosePlot %}
+        <img src="data:image/png;base64, {{dosePlot|safe}}" />
+    {% endif %}
+
+    
+    <br>
+    {% if venousBloodPlot1 %}
+        <img src="data:image/png;base64, {{venousBloodPlot1|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if venousBloodPlot2 %}
+        <img src="data:image/png;base64, {{venousBloodPlot2|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if venousBloodPlot %}
+        <img src="data:image/png;base64, {{venousBloodPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if venourRBCPlot %}
+        <img src="data:image/png;base64, {{venourRBCPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if lungClvPlot %}
+        <img src="data:image/png;base64, {{lungClvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if lungClePlot %}
+        <img src="data:image/png;base64, {{lungClePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if lungClbPlot %}
+        <img src="data:image/png;base64, {{lungClbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if artetialBloodPlot %}
+        <img src="data:image/png;base64, {{artetialBloodPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if artetialRBCPlot %}
+        <img src="data:image/png;base64, {{artetialRBCPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if gutCgvPlot %}
+        <img src="data:image/png;base64, {{gutCgvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if brainCbvPlot %}
+        <img src="data:image/png;base64, {{brainCbvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if brainCbePlot %}
+        <img src="data:image/png;base64, {{brainCbePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if brainCbbPlot %}
+        <img src="data:image/png;base64, {{brainCbbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if spleenCsvPlot %}
+        <img src="data:image/png;base64, {{spleenCsvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if spleenCsePlot %}
+        <img src="data:image/png;base64, {{spleenCsePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if spleenCsbPlot %}
+        <img src="data:image/png;base64, {{spleenCsbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if liverClivPlot %}
+        <img src="data:image/png;base64, {{liverClivPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if liverCliePlot %}
+        <img src="data:image/png;base64, {{liverCliePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if liverClibPlot %}
+        <img src="data:image/png;base64, {{liverClibPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if kidneyCkvPlot %}
+        <img src="data:image/png;base64, {{kidneyCkvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if kidneyCkePlot %}
+        <img src="data:image/png;base64, {{kidneyCkePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if kidneyCkbPlot %}
+        <img src="data:image/png;base64, {{kidneyCkbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if muscleCmvPlot %}
+        <img src="data:image/png;base64, {{muscleCmvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if muscleCmePlot %}
+        <img src="data:image/png;base64, {{muscleCmePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if muscleCmbPlot %}
+        <img src="data:image/png;base64, {{muscleCmbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if fatCfvPlot %}
+        <img src="data:image/png;base64, {{fatCfvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if fatCfePlot %}
+        <img src="data:image/png;base64, {{fatCfePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if fatCfbPlot %}
+        <img src="data:image/png;base64, {{fatCfbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if tumorCtvPlot %}
+        <img src="data:image/png;base64, {{tumorCtvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if tumorCtePlot %}
+        <img src="data:image/png;base64, {{tumorCtePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if tumorCtbPlot %}
+        <img src="data:image/png;base64, {{tumorCtbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if heartChvPlot %}
+        <img src="data:image/png;base64, {{heartChvPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if heartChePlot %}
+        <img src="data:image/png;base64, {{heartChePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if heartChbPlot %}
+        <img src="data:image/png;base64, {{heartChbPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if otherCovPlot %}
+        <img src="data:image/png;base64, {{otherCovPlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if otherCoePlot %}
+        <img src="data:image/png;base64, {{otherCoePlot|safe}}" />
+    {% endif %}
+
+    <br>
+    {% if otherCobPlot %}
+        <img src="data:image/png;base64, {{otherCobPlot|safe}}" />
+    {% endif %}
+
+
+
+
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        // MDB Lightbox Init
+        $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+            var src = $(this).attr('src');
+            var modal;
+          
+            function removeModal() {
+              modal.remove();
+              $('body').off('keyup.modal-close');
+            }
+            modal = $('<div>').css({
+              background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+              backgroundSize: 'contain',
+              width: '100%',
+              height: '100%',
+              position: 'fixed',
+              zIndex: '10000',
+              top: '0',
+              left: '0',
+              cursor: 'zoom-out'
+            }).click(function() {
+              removeModal();
+            }).appendTo('body');
+            //handling ESC
+            $('body').on('keyup.modal-close', function(e) {
+              if (e.key === 'Escape') {
+                removeModal();
+              }
+            });
+          });
+    </script>
+
+
+{% endblock %}
