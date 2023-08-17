@@ -74,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FESapp.wsgi.application'
 
-DATABASE_URL = "postgresql://postgres:AkwmIAxuJntTIIX9vdEK@containers-us-west-85.railway.app:6243/railway"
+DATABASE_URL = "postgresql://postgres:ulmmPu37X7nmwm3rwF6v@containers-us-west-40.railway.app:6531/railway"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
