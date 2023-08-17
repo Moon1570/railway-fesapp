@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://railway-fesapp-production.up.railway.app.com']
 
 # Application definition
 
