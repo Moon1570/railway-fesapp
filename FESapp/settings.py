@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DATABASE_URL = "postgresql://postgres:AkwmIAxuJntTIIX9vdEK@containers-us-west-85.railway.app:6243/railway"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,7 +28,7 @@ SECRET_KEY = 'django-insecure-3woyun0twfby^(bu=imuo64p8m4m-@2!)h0dll_ohoa5113_^q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -72,18 +74,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FESapp.wsgi.application'
 
+DATABASE_URL = "postgresql://postgres:AkwmIAxuJntTIIX9vdEK@containers-us-west-85.railway.app:6243/railway"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'FESapp',
-        'USER': 'postgres',
-        'PASSWORD': '1570',
-        'HOST': 'localhost',
-    }
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
 
 
