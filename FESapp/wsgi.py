@@ -13,4 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'FESapp.settings'
 
-application = get_wsgi_application()
+#application = get_wsgi_application()
+from app import app as application
+app = application
