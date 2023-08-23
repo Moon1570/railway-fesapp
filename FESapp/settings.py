@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,15 +76,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FESapp.wsgi.application'
 
-DATABASE_URL = "postgresql://postgres:ulmmPu37X7nmwm3rwF6v@containers-us-west-40.railway.app:6531/railway"
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'FESapp',
+        'USER': 'postgres',
+        'PASSWORD': '1570',
+        'HOST': 'localhost',
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
